@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing/DJNativeSwing-SWT.jar"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing/DJNativeSwing.jar"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing/jna_WindowUtils.jar"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing/jna-3.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/DJNativeSwing/MozillaInterfaces-1.8.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/substance/laf-plugin.jar"/>
+	<classpathentry kind="lib" path="lib/substance/laf-widget.jar"/>
+	<classpathentry kind="lib" path="lib/substance/substance-swingx.jar"/>
+	<classpathentry kind="lib" path="lib/swing application framework/appframework-1.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/swing application framework/swing-worker-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/swingx/swingx-beaninfo-1.6.2.jar"/>
+	<classpathentry kind="lib" path="lib/swingx/swingx-core-1.6.2.jar"/>
+	<classpathentry kind="lib" path="lib/ftp4j-1.6.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
