@@ -10,10 +10,9 @@
 	<classpathentry kind="lib" path="lib/substance/laf-plugin.jar"/>
 	<classpathentry kind="lib" path="lib/substance/laf-widget.jar"/>
 	<classpathentry kind="lib" path="lib/substance/substance-swingx.jar"/>
-	<classpathentry kind="lib" path="lib/swing application framework/appframework-1.0.3.jar"/>
-	<classpathentry kind="lib" path="lib/swing application framework/swing-worker-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/swingx/swingx-beaninfo-1.6.2.jar"/>
 	<classpathentry kind="lib" path="lib/swingx/swingx-core-1.6.2.jar"/>
 	<classpathentry kind="lib" path="lib/ftp4j-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/bsaf-1.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
