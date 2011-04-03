@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: API
+Bundle-SymbolicName: com.shijie.media.client.api
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: SHIJIE
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: javax.servlet;bundle-version="2.5.0",
+ DJNativeSwing;bundle-version="0.99.0"
+Export-Package: com.shijie.media.client.api.module,
+ com.shijie.media.client.api.service,
+ com.shijie.media.client.api.ui,
+ com.shijie.media.client.entity
