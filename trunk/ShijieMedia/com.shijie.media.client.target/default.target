@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.6"?>
+
+<target name="Running Platform">
+<locations>
+<location path="${project_loc}/client" type="Profile"/>
+</locations>
+<environment>
+<os>win32</os>
+<ws>win32</ws>
+<arch>x86</arch>
+<nl>en_US</nl>
+</environment>
+<launcherArgs>
+<vmArgs>-Dosgi.requiredJavaVersion=1.5 -Xms512m -Xmx512m -XX:PermSize=96m -XX:MaxPermSize=96m -Xmn168m -XX:+DisableExplicitGC -Dorg.eclipse.ecf.provider.filetransfer.excludeContributors=org.eclipse.ecf.provider.filetransfer.httpclient -Dhttp.proxyPort=8080 -Dhttp.proxyHost=10.228.1.36 -Dhttp.proxyUser=pa\tzhaowb -Dhttp.proxyPassword=qaz@1012 -Dhttp.nonProxyHosts=localhost|127.0.0.1</vmArgs>
+</launcherArgs>
+</target>
