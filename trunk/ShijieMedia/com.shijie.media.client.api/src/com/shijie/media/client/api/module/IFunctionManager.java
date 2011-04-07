@@ -1,6 +1,7 @@
 package com.shijie.media.client.api.module;
 
 import java.util.Collection;
+import java.util.EventListener;
 
 /**
  * @author Ivan
@@ -32,5 +33,17 @@ public interface IFunctionManager {
 	 * @return
 	 */
 	public Collection<IFunction> getFunctions(int type);
+	
+	/**
+	 * @param type
+	 * @param listener
+	 */
+	public void addFunctionChangeListener(int type,EventListener listener);
+	
+	/**
+	 * @param type
+	 * @param listener
+	 */
+	public void removeFunctionChangeListener(int type,EventListener listener);
 
 }

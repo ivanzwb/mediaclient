@@ -11,3 +11,4 @@ Export-Package: com.shijie.media.client.api.module,
  com.shijie.media.client.api.service,
  com.shijie.media.client.api.ui,
  com.shijie.media.client.entity
+Import-Package: org.osgi.framework;version="1.6.0"
