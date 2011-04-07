@@ -15,8 +15,12 @@ public interface IEvent {
 	 */
 	public static int DECORATED_BROWSER = 2002;
 	/**
-	 *  显示没有装饰的播放事件
+	 *  显示装饰的电影播放事件
 	 */
-	public static int NO_DECORATED_PLAYER = 2003;
+	public static int DECORATED_MOVIE_PLAYER = 2003;
+	/**
+	 *  显示装饰的音乐播放事件
+	 */
+	public static int DECORATED_MUSIC_PLAYER = 2003;
 
 }
