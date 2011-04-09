@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.shijie.media.client.platform.viewmanager">
+   <implementation class="com.shijie.media.client.platform.ViewManager"/>
+   <service>
+      <provide interface="com.shijie.media.client.api.ui.IViewManager"/>
+   </service>
+   <reference bind="installView" cardinality="0..n" interface="com.shijie.media.client.api.ui.IView" name="IView" policy="dynamic" unbind="uninstallView"/>
+</scr:component>

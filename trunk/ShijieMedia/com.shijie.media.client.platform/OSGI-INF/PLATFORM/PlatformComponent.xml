@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.shijie.media.client.platform">
+   <implementation class="com.shijie.media.client.platform.PlatformComponent"/>
+   <reference bind="installViewMananger" cardinality="1..1" interface="com.shijie.media.client.api.ui.IViewManager" name="IViewManager" policy="static" unbind="uninstallViewMananger"/>
+   <reference bind="installSkinMananger" cardinality="1..1" interface="com.shijie.media.client.api.ui.ISkinManager" name="ISkinManager" policy="static" unbind="uninstallSkinMananger"/>
+   <reference bind="installServiceManager" cardinality="1..1" interface="com.shijie.media.client.api.service.IServiceManager" name="IServiceManager" policy="static" unbind="uninstallServiceManager"/>
+   <service>
+      <provide interface="com.shijie.media.client.api.ui.IPlatform"/>
+   </service>
+</scr:component>

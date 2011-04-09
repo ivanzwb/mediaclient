@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.shijie.media.client.platform.fcview">
+   <implementation class="com.shijie.media.client.platform.ui.footer.FCView"/>
+   <service>
+      <provide interface="com.shijie.media.client.api.ui.IView"/>
+      <provide interface="com.shijie.media.client.api.module.IToolManager"/>
+   </service>
+   <reference bind="installTool" cardinality="0..n" interface="com.shijie.media.client.api.module.ITool" name="ITool" policy="dynamic" unbind="uninstallTool"/>
+</scr:component>

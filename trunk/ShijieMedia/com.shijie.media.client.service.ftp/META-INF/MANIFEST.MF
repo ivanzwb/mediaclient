@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Download
+Bundle-SymbolicName: com.shijie.media.client.service.ftp;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: SHIJIE
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: com.shijie.media.client.api;bundle-version="1.0.0",
+ org.apache.commons.net;bundle-version="2.2.0",
+ slf4j.api;bundle-version="1.6.1"
+Service-Component: OSGI-INF/FTPDownload.xml

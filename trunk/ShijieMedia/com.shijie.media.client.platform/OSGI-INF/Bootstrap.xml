@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.shijie.media.client.starter">
+   <implementation class="com.shijie.media.client.starter.Bootstrap"/>
+   <reference bind="startup" cardinality="1..1" interface="com.shijie.media.client.api.ui.IPlatform" name="IPlatform" policy="static" unbind="shutdown"/>
+</scr:component>
