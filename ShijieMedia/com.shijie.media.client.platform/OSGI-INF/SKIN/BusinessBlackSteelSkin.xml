@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.shijie.media.client.platform.skin.businessblacksteelskin">
+   <implementation class="com.shijie.media.client.platform.skin.BusinessBlackSteelSkin"/>
+   <service>
+      <provide interface="com.shijie.media.client.api.ui.ISkin"/>
+   </service>
+</scr:component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.shijie.media.client.platform.feview">
+   <implementation class="com.shijie.media.client.platform.ui.footer.FEView"/>
+   <service>
+      <provide interface="com.shijie.media.client.api.ui.IView"/>
+      <provide interface="com.shijie.media.client.api.module.ITrayManager"/>
+   </service>
+   <reference bind="installTray" cardinality="0..n" interface="com.shijie.media.client.api.module.ITray" name="ITray" policy="dynamic" unbind="uninstallTray"/>
+</scr:component>

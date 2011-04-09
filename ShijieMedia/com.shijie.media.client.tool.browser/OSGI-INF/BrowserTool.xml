@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.shijie.media.client.tool.browser.browsertool">
+   <implementation class="com.shijie.media.client.tool.browser.BrowserTool"/>
+   <service>
+      <provide interface="com.shijie.media.client.api.module.ITool"/>
+   </service>
+</scr:component>

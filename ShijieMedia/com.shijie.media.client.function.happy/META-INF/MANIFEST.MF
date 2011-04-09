@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Happymoment
+Bundle-SymbolicName: com.shijie.media.client.function.happy;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: SHIJIE
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: com.shijie.media.client.api;bundle-version="1.0.0",
+ slf4j.api;bundle-version="1.6.1"
+Service-Component: OSGI-INF/HappyFunction.xml
+Import-Package: org.osgi.framework;version="1.6.0"
+Bundle-Activator: com.shijie.media.client.function.happy.Activator

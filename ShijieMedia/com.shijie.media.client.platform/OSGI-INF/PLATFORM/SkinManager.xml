@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.shijie.media.client.platform.skinmanager">
+   <implementation class="com.shijie.media.client.platform.SkinManager"/>
+   <reference bind="installSkin" cardinality="0..n" interface="com.shijie.media.client.api.ui.ISkin" name="ISkin" policy="dynamic" unbind="uninstallSkin"/>
+   <service>
+      <provide interface="com.shijie.media.client.api.ui.ISkinManager"/>
+   </service>
+</scr:component>
