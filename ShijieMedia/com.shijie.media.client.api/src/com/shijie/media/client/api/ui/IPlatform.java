@@ -1,6 +1,5 @@
 package com.shijie.media.client.api.ui;
 
-import com.shijie.media.client.api.module.IFunctionManager;
 import com.shijie.media.client.api.service.IServiceManager;
 
 /**
@@ -24,11 +23,6 @@ public interface IPlatform {
 	 * @param serviceManager
 	 */
 	public void installServiceManager(IServiceManager serviceManager);
-	/**
-	 * 安装功能菜单管理器。
-	 * @param manager
-	 */
-	public void installFunctionManager(IFunctionManager manager);
 	/**
 	 * 加载平台
 	 */
