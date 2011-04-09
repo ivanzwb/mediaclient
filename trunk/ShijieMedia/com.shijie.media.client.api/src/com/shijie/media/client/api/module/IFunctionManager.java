@@ -23,27 +23,25 @@ public interface IFunctionManager {
 	/**
 	 * 根据功能菜单id，和类型返回功能菜单。
 	 * @param id
-	 * @param type
 	 * @return
 	 */
-	public IFunction getFunction(String id,int type);
+	public IFunction getFunction(String id);
 	/**
 	 * 根据功能类型返回功能菜单。
-	 * @param type
 	 * @return
 	 */
-	public Collection<IFunction> getFunctions(int type);
+	public Collection<IFunction> getFunctions();
 	
 	/**
-	 * @param type
+	 * 加入监听功能改变事件
 	 * @param listener
 	 */
-	public void addFunctionChangeListener(int type,EventListener listener);
+	public void addFunctionChangeListener(EventListener listener);
 	
 	/**
-	 * @param type
+	 * 移除监听功能改变事件
 	 * @param listener
 	 */
-	public void removeFunctionChangeListener(int type,EventListener listener);
+	public void removeFunctionChangeListener(EventListener listener);
 
 }

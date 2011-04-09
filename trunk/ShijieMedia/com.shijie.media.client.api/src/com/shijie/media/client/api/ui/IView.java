@@ -111,6 +111,11 @@ public interface IView {
 	public final static String CENTER_SOUTH="CS";
 	
 	/**
+	 * 弹出视图
+	 */
+	public final static String POPUP = "P";
+	
+	/**
 	 * 初始化视图配置。
 	 * @param config
 	 */
