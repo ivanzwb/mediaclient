@@ -15,6 +15,9 @@ import com.db4o.query.Predicate;
 import com.shijie.media.client.api.service.DBService;
 import com.shijie.media.client.api.service.IServiceManager;
 import com.shijie.media.client.entity.Config;
+import com.spaceprogram.db4o.sql.Sql4o;
+import com.spaceprogram.db4o.sql.Sql4oException;
+import com.spaceprogram.db4o.sql.parser.SqlParseException;
 
 public class Db4oService extends Db4oDriver implements DBService {
 	
@@ -52,7 +55,7 @@ public class Db4oService extends Db4oDriver implements DBService {
 	}
 	@Override
 	public String getServiceID() {
-		return "DBService";
+		return ID;
 		
 	}
 	@Override
@@ -95,7 +98,9 @@ public class Db4oService extends Db4oDriver implements DBService {
 	
 	@Override
 	public <TargetType> void store(List<TargetType> objList) {
-		
+		for(TargetType type:objList){
+			client.store(type);
+		}
 	}
 	@Override
 	public void delete(Object obj){
@@ -104,15 +109,25 @@ public class Db4oService extends Db4oDriver implements DBService {
 	
 	@Override
 	public <TargetType> int delete(Class<TargetType> obj) {
-		
-		return 0;
+		int count = 0;
+		List<TargetType> list = client.query(obj);
+		for(TargetType type:list){
+			client.delete(type);
+			count++;
+		}
+		return count;
 	}
 
 	@Override
 	public <TargetType> int delete(Class<TargetType> obj,
 			HashMap<String, Object> map) {
-		
-		return 0;
+		int count = 0;
+		List<TargetType> list = query(obj,map);
+		for(TargetType type:list){
+			client.delete(type);
+			count++;
+		}
+		return count;
 	}
 
 	@Override
@@ -162,15 +177,23 @@ public class Db4oService extends Db4oDriver implements DBService {
 	}
 
 	public int execute(String nativeSql){
-		
-		
+		//haven't implemented.
 		return 0;
-		
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
-	public <Type> List<Type> executeQuery(String nativeSQL) {
-		return null;
+	public <Type> List<Type> executeQuery(String nativeSql) {
+		List<Type> list = null;
+	    try {
+	    	list = (List<Type>) Sql4o.execute(client, nativeSql);
+        } catch (SqlParseException e) {
+        	logger.error("sql parse exception:"+e.getMessage());
+        } catch (Sql4oException e) {
+			logger.error("sql execute exception:"+e.getMessage());
+		};
+		
+		return list;
 	}
-
+	
 }
