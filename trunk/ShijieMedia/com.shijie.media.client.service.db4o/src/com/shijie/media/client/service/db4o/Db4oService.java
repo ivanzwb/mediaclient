@@ -157,12 +157,20 @@ public class Db4oService extends Db4oDriver implements DBService {
 				while(keyIterator.hasNext()){
 					String key = keyIterator.next();
 					try {
-						Method method = arg.getClass().getDeclaredMethod("get"+key.substring(0,1).toUpperCase()+key.substring(1));
+						Object value = map.get(key);
+						String methodName;
+						if(value instanceof Boolean){
+							methodName = "is"+key.substring(0,1).toUpperCase()+key.substring(1);
+						}else{
+							methodName = "get"+key.substring(0,1).toUpperCase()+key.substring(1);
+						}
+							
+						Method method = arg.getClass().getDeclaredMethod(methodName);
 						Object obj = method.invoke(arg);
-						if(obj!=null&&!obj.equals(map.get(key))){
+						if(obj!=null&&!obj.equals(value)){
 							return false;
 						}
-						else if(obj==null&&map.get(key)!=null){
+						else if(obj==null&&value!=null){
 							return false;
 						}
 					} catch (Exception e) {
