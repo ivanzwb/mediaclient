@@ -22,9 +22,6 @@ import com.shijie.media.client.api.module.ITool;
 import com.shijie.media.client.api.module.IToolManager;
 import com.shijie.media.client.api.ui.IView;
 import com.shijie.media.client.api.ui.IViewManager;
-import com.shijie.media.client.entity.Category;
-import com.shijie.media.client.entity.Config;
-import com.shijie.media.client.utils.DBUtils;
 import com.shijie.media.client.utils.SortValueMap;
 
 public class FCView implements IView ,IToolManager{
@@ -49,7 +46,7 @@ public class FCView implements IView ,IToolManager{
 	private SortValueMap<String,ITool> toolMap = new SortValueMap<String,ITool>(sort);
 	
 	@Override
-	public void init(Config config) {
+	public void init() {
 
 	}
 
@@ -96,7 +93,7 @@ public class FCView implements IView ,IToolManager{
 	
 	private void createTool(List<ITool> list,JPanel root){
 		for(ITool tool:list){
-			tool.init(DBUtils.getConfig(Category.CAT_TOOL, tool.getId()));
+			tool.init();
 			tool.setViewManager(viewManager);
 			insert(root, tool,-1);
 	    }

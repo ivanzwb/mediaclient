@@ -1,6 +1,6 @@
 package com.shijie.media.client.api.service;
 
-import com.shijie.media.client.entity.Config;
+
 
 /**
  * @author Ivan
@@ -12,7 +12,7 @@ public interface IService {
 	 * 初始化服务配置。
 	 * @param config
 	 */
-	public void init(Config config);
+	public void init();
 	
 	/**
 	 * 启动服务。

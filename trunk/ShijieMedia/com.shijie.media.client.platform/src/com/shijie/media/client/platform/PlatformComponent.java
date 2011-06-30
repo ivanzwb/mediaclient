@@ -28,7 +28,7 @@ import com.shijie.media.client.api.ui.ISkin;
 import com.shijie.media.client.api.ui.ISkinManager;
 import com.shijie.media.client.api.ui.IViewManager;
 import com.shijie.media.client.entity.Category;
-import com.shijie.media.client.utils.DBUtils;
+import com.shijie.media.client.entity.ConfigWrapper;
 import com.shijie.media.client.utils.InitConfig;
 
 public class PlatformComponent implements IPlatform{
@@ -80,14 +80,14 @@ public class PlatformComponent implements IPlatform{
 		Collection<IService> services = serviceManager.getServices();
 		
 		DBService dbService = (DBService) serviceManager.getService(DBService.ID);
-		dbService.init(null);
+		dbService.init();
 		dbService.start();		
 		
 		Iterator<IService> it = services.iterator();
 		while(it.hasNext()){
 			IService service = it.next();
 			if(!DBService.ID.equals(service.getServiceID())){
-				service.init(DBUtils.getConfig(dbService,Category.CAT_SERVICE,service.getServiceID()));
+				service.init();
 				service.start();
 			}
 		}	
@@ -104,9 +104,7 @@ public class PlatformComponent implements IPlatform{
 		Runnable appStarter = new Runnable() {
 			public void run() {
 				
-				DBService dbService = (DBService) serviceManager.getService(DBService.ID);
-				
-				HashMap<String, Object> config = DBUtils.getConfig(dbService,Category.CAT_PLATFROM,Constraints.PLATFORM).getProps();
+				HashMap<String, Object> config = new ConfigWrapper(Category.CAT_PLATFROM,Constraints.PLATFORM).load().getProps();
 				
 				initGlobalFontSetting((Font) config.get(Constraints.PLATFORM_FONT)); 
 				

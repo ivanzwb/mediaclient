@@ -32,9 +32,6 @@ import com.shijie.media.client.api.module.IFunctionManager;
 import com.shijie.media.client.api.ui.IEvent;
 import com.shijie.media.client.api.ui.IView;
 import com.shijie.media.client.api.ui.IViewManager;
-import com.shijie.media.client.entity.Category;
-import com.shijie.media.client.entity.Config;
-import com.shijie.media.client.utils.DBUtils;
 import com.shijie.media.client.utils.SortValueMap;
 
 public class FWView implements IView ,IFunctionManager{
@@ -59,8 +56,7 @@ public class FWView implements IView ,IFunctionManager{
 	private SortValueMap<String,IFunction> cusFuncMap = new SortValueMap<String,IFunction>(sort);
 	
 	@Override
-	public void init(Config config) {
-		
+	public void init() {
 
 	}
 
@@ -107,7 +103,7 @@ public class FWView implements IView ,IFunctionManager{
 	
 	private void createFunction(List<IFunction> list,JPanel root){
 		for(final IFunction func:list){
-			func.init(DBUtils.getConfig(Category.CAT_CUSTOMER_FUNCTION, func.getId()));
+			func.init();
 			insert(root, func,-1);
 	    }
 	}

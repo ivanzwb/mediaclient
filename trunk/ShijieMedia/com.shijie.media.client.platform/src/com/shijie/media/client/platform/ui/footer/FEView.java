@@ -22,9 +22,6 @@ import com.shijie.media.client.api.module.ITray;
 import com.shijie.media.client.api.module.ITrayManager;
 import com.shijie.media.client.api.ui.IView;
 import com.shijie.media.client.api.ui.IViewManager;
-import com.shijie.media.client.entity.Category;
-import com.shijie.media.client.entity.Config;
-import com.shijie.media.client.utils.DBUtils;
 import com.shijie.media.client.utils.SortValueMap;
 
 public class FEView implements IView,ITrayManager {
@@ -48,8 +45,7 @@ public class FEView implements IView,ITrayManager {
 	private SortValueMap<String,ITray> trayMap =new SortValueMap<String,ITray>(sort);
 	
 	@Override
-	public void init(Config config) {
-		// TODO Auto-generated method stub
+	public void init() {
 		
 	}
 	@Override
@@ -95,7 +91,7 @@ public class FEView implements IView,ITrayManager {
 	
 	private void createTray(List<ITray> list,JPanel root){
 		for(ITray tray:list){
-			tray.init(DBUtils.getConfig(Category.CAT_TOOL, tray.getId()));
+			tray.init();
 			tray.setViewManager(viewManager);
 			insert(root, tray,-1);
 	    }

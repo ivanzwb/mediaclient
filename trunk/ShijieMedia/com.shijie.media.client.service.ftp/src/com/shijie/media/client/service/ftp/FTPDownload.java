@@ -15,7 +15,9 @@ import org.slf4j.LoggerFactory;
 import com.shijie.media.client.api.service.DBService;
 import com.shijie.media.client.api.service.DownloadService;
 import com.shijie.media.client.api.service.IServiceManager;
+import com.shijie.media.client.entity.Category;
 import com.shijie.media.client.entity.Config;
+import com.shijie.media.client.entity.ConfigWrapper;
 import com.shijie.media.client.entity.DownloadTask;
 
 public class FTPDownload implements DownloadService {
@@ -63,9 +65,9 @@ public class FTPDownload implements DownloadService {
 	}
 
 	@Override
-	public void init(Config config) {
+	public void init() {
 		logger.info("init FTP download service");
-		this.config = config;
+		this.config = new ConfigWrapper(Category.CAT_SERVICE,ID).load();
 		this.status = STOPPED;
 	}
 

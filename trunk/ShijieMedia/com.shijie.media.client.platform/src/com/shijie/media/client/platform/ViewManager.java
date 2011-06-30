@@ -20,12 +20,8 @@ import org.pushingpixels.substance.api.SubstanceLookAndFeel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.shijie.media.client.activator.Activator;
-import com.shijie.media.client.api.service.DBService;
 import com.shijie.media.client.api.ui.IView;
 import com.shijie.media.client.api.ui.IViewManager;
-import com.shijie.media.client.entity.Category;
-import com.shijie.media.client.utils.DBUtils;
 
 public class ViewManager implements IViewManager{
 	private Logger logger = LoggerFactory.getLogger(ViewManager.class);
@@ -175,7 +171,7 @@ public class ViewManager implements IViewManager{
 			Runnable doRun = new Runnable(){
 				@Override
 				public void run() {
-					view.init(DBUtils.getConfig((DBService) Activator.getServiceManager().getService(DBService.ID),Category.CAT_UI_VIEW,view.getLocation()));
+					view.init();
 					String location = view.getLocation();
 					char type = location.charAt(0);
 					switch(type){

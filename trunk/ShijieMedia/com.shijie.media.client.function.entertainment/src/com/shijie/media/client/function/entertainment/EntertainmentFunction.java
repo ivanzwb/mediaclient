@@ -8,7 +8,9 @@ import javax.swing.ImageIcon;
 import com.shijie.media.client.api.module.IFunction;
 import com.shijie.media.client.api.module.IModule;
 import com.shijie.media.client.api.service.WebService;
+import com.shijie.media.client.entity.Category;
 import com.shijie.media.client.entity.Config;
+import com.shijie.media.client.entity.ConfigWrapper;
 
 public class EntertainmentFunction implements IFunction {
 	
@@ -39,7 +41,8 @@ public class EntertainmentFunction implements IFunction {
 	}
 	
 	@Override
-	public void init(Config config) {
+	public void init() {
+		Config config = new ConfigWrapper(Category.CAT_FUNCTION, getId()).load();
 		if(config!=null){
 			id = (String) ignoreNull(config.getProps().get(IModule.MODULE_ID),url);
 			url = (String) ignoreNull(config.getProps().get(IModule.MODULE_URL),url);

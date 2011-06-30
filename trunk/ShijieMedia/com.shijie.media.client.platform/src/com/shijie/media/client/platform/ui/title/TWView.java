@@ -5,7 +5,9 @@ import javax.swing.JLabel;
 
 import com.shijie.media.client.api.ui.IView;
 import com.shijie.media.client.api.ui.IViewManager;
+import com.shijie.media.client.entity.Category;
 import com.shijie.media.client.entity.Config;
+import com.shijie.media.client.entity.ConfigWrapper;
 import com.shijie.media.client.platform.Constraints;
 
 public class TWView implements IView{
@@ -14,7 +16,8 @@ public class TWView implements IView{
 	private String version;
 
 	@Override
-	public void init(Config config) {
+	public void init() {
+		Config config = new ConfigWrapper(Category.CAT_UI_VIEW,getLocation()).load();
 		version = (String) config.getProps().get(Constraints.TW_VERSION);
 	}
 

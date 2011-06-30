@@ -14,7 +14,9 @@ import javax.swing.Timer;
 import com.shijie.media.client.api.ui.IEvent;
 import com.shijie.media.client.api.ui.IView;
 import com.shijie.media.client.api.ui.IViewManager;
+import com.shijie.media.client.entity.Category;
 import com.shijie.media.client.entity.Config;
+import com.shijie.media.client.entity.ConfigWrapper;
 import com.shijie.media.client.platform.Constraints;
 
 public class TEAdv implements IView{
@@ -27,7 +29,8 @@ public class TEAdv implements IView{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void init(Config config) {
+	public void init() {
+		Config config = new ConfigWrapper(Category.CAT_UI_VIEW,getLocation()).load();
 		advList = (List<String>)config.getProps().get(Constraints.TE_ADV_LIST);
 		linkList = (List<String>)config.getProps().get(Constraints.TE_LINK_LIST);
 		scrollTime = (Integer) config.getProps().get(Constraints.TE_SCROLLTIME);

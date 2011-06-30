@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 
 import com.shijie.media.client.api.service.IServiceManager;
 import com.shijie.media.client.api.service.WebService;
-import com.shijie.media.client.entity.Config;
 
 public class JettyService implements WebService{
 	
@@ -85,7 +84,7 @@ public class JettyService implements WebService{
 	
 	
 	@Override
-	public void init(Config config) {
+	public void init() {
 		logger.info("init Web Service...");
 	}
 
