@@ -2,8 +2,6 @@ package com.shijie.media.client.api.module;
 
 import javax.swing.Icon;
 
-import com.shijie.media.client.entity.Config;
-
 /**
  * 所有模块功能的接口。
  * @author Ivan
@@ -40,7 +38,7 @@ public interface IModule {
 	 * 初始化模块配置。
 	 * @param config
 	 */
-	public void init(Config config);
+	public void init();
 	
 	/**
 	 * 返回显示名称。

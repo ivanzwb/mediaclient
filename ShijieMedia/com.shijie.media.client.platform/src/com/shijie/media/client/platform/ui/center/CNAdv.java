@@ -18,7 +18,9 @@ import chrriis.dj.nativeswing.swtimpl.components.WebBrowserWindowWillOpenEvent;
 import com.shijie.media.client.api.ui.IEvent;
 import com.shijie.media.client.api.ui.IView;
 import com.shijie.media.client.api.ui.IViewManager;
+import com.shijie.media.client.entity.Category;
 import com.shijie.media.client.entity.Config;
+import com.shijie.media.client.entity.ConfigWrapper;
 import com.shijie.media.client.platform.Constraints;
 
 public class CNAdv implements IView{
@@ -29,7 +31,8 @@ public class CNAdv implements IView{
 	private IViewManager viewManager;
 	
 	@Override
-	public void init(Config config) {
+	public void init() {
+		Config config = new ConfigWrapper(Category.CAT_UI_VIEW,getLocation()).load();
 		url = (String) config.getProps().get(Constraints.CN_URL);
 		scrollTime = (Integer) config.getProps().get(Constraints.CN_SCROLLTIME);
 	}

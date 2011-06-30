@@ -25,7 +25,9 @@ import chrriis.dj.nativeswing.swtimpl.components.WebBrowserWindowWillOpenEvent;
 import com.shijie.media.client.api.ui.IEvent;
 import com.shijie.media.client.api.ui.IView;
 import com.shijie.media.client.api.ui.IViewManager;
+import com.shijie.media.client.entity.Category;
 import com.shijie.media.client.entity.Config;
+import com.shijie.media.client.entity.ConfigWrapper;
 import com.shijie.media.client.platform.Constraints;
 import com.shijie.media.client.platform.components.DecoratedPlayer;
 import com.shijie.media.client.platform.components.DecoratedPlayer.VLCPlayerControlBar;
@@ -53,7 +55,8 @@ public class CCView implements IView {
 	private int height;
 	
 	@Override
-	public void init(Config config) {
+	public void init() {
+		Config config = new ConfigWrapper(Category.CAT_UI_VIEW,getLocation()).load();
 		home = (String)config.getProps().get("cc.home");
 		browserFullscreen = ((String)config.getProps().get("cc.browser.fullscreen")).split(",");
 		playerFullscreen = ((String)config.getProps().get("cc.player.fullscreen")).split(",");

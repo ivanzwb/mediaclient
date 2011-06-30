@@ -7,14 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import com.shijie.media.client.api.service.IServiceManager;
 import com.shijie.media.client.api.service.UpdaterService;
-import com.shijie.media.client.entity.Config;
 
 public class BundleUpdaterService implements UpdaterService{
 
 	private Logger logger = LoggerFactory.getLogger(BundleUpdaterService.class);
 	
 	@Override
-	public void init(Config config) {
+	public void init() {
 		logger.info("init bundle updater service...");
 		
 	}

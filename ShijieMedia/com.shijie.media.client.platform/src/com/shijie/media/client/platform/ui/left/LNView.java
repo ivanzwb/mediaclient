@@ -8,7 +8,9 @@ import javax.swing.JLabel;
 
 import com.shijie.media.client.api.ui.IView;
 import com.shijie.media.client.api.ui.IViewManager;
+import com.shijie.media.client.entity.Category;
 import com.shijie.media.client.entity.Config;
+import com.shijie.media.client.entity.ConfigWrapper;
 import com.shijie.media.client.platform.Constraints;
 
 public class LNView implements IView{
@@ -17,7 +19,8 @@ public class LNView implements IView{
 	private String url;
 	private ImageIcon icon;
 	@Override
-	public void init(Config config) {
+	public void init() {
+		Config config = new ConfigWrapper(Category.CAT_UI_VIEW,getLocation()).load();
 		url = (String) config.getProps().get(Constraints.LN_LOGO);
 	}
 	

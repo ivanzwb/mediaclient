@@ -14,7 +14,6 @@ import com.db4o.ObjectContainer;
 import com.db4o.query.Predicate;
 import com.shijie.media.client.api.service.DBService;
 import com.shijie.media.client.api.service.IServiceManager;
-import com.shijie.media.client.entity.Config;
 import com.spaceprogram.db4o.sql.Sql4o;
 import com.spaceprogram.db4o.sql.Sql4oException;
 import com.spaceprogram.db4o.sql.parser.SqlParseException;
@@ -42,7 +41,7 @@ public class Db4oService extends Db4oDriver implements DBService {
 	}
 	
 	@Override
-	public void init(Config config) {
+	public void init() {
 		logger.info("init Db4o serivce...");
 	}
 	@Override

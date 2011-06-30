@@ -21,7 +21,9 @@ import com.shijie.media.client.api.module.ITool;
 import com.shijie.media.client.api.service.WebService;
 import com.shijie.media.client.api.ui.IEvent;
 import com.shijie.media.client.api.ui.IViewManager;
+import com.shijie.media.client.entity.Category;
 import com.shijie.media.client.entity.Config;
+import com.shijie.media.client.entity.ConfigWrapper;
 
 public class GameTool implements ITool {
 
@@ -56,7 +58,8 @@ public class GameTool implements ITool {
 	}
 	
 	@Override
-	public void init(Config config) {
+	public void init() {
+		Config config = new ConfigWrapper(Category.CAT_TOOL, getId()).load();
 		if(config!=null){
 			id = (String) ignoreNull(config.getProps().get(IModule.MODULE_ID),id);
 			displayName = (String)ignoreNull(config.getProps().get(IModule.MODULE_DISPLAYNAME),displayName);

@@ -2,8 +2,6 @@ package com.shijie.media.client.api.ui;
 
 import javax.swing.JComponent;
 
-import com.shijie.media.client.entity.Config;
-
 /**
  * @author Ivan
  * 视图接口。
@@ -119,7 +117,7 @@ public interface IView {
 	 * 初始化视图配置。
 	 * @param config
 	 */
-	public void init(Config config);
+	public void init();
 	/**
 	 * 返回视图组件。
 	 * @return
