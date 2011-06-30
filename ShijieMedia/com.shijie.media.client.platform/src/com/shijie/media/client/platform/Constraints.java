@@ -3,7 +3,6 @@ package com.shijie.media.client.platform;
 import com.shijie.media.client.api.service.DBService;
 import com.shijie.media.client.api.service.DownloadService;
 import com.shijie.media.client.api.service.SyncService;
-import com.shijie.media.client.api.service.TimerService;
 import com.shijie.media.client.api.service.UpdaterService;
 import com.shijie.media.client.api.service.WebService;
 import com.shijie.media.client.api.ui.IView;
@@ -47,8 +46,6 @@ public class Constraints {
 	public static final String DB_USERNAME = "username";
 	public static final String DB_PASSWORD = "password";
 	
-
-	public static final String TIMER_SERVICE = TimerService.ID;
 	
 	public static final String DOWNLOAD_SERVICE = DownloadService.ID;
 	public static final String DOWNLOAD_TEMP = "download.temp";
